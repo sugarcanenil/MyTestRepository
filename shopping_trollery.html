@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- 聂文轩 201992032 软测1904 2022.03.15 18:02 -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>购物车</title>
+    <link rel="stylesheet" type="text/css" href="css/shopping.css">
+    <script type="text/javascript" src="js/shopping.js"></script>
+    
+</head>
+
+<body>
+    <table border="0" cellspacing="0" cellpadding="0" id="shopping1" class="center">
+        <tr class="title">
+            <td class="center"><input type="checkbox" id="all" value="select_all" onclick="select_all();">全选</td>
+            <td>商品名称</td>
+            <td>数量</td>
+            <td>单价(&yen;)</td>
+            <td>操作</td>
+        </tr>
+        <tr id="row1" class="goods">
+            <td class="center"><input name="product" type="checkbox" value="1"></td>
+            <td><img src="img/row1.jpg" alt="row1" class="little"> 联想拯救者r9000p 2021版</td>
+            <td class="center" name="sum">1</td>
+            <td class="center">7999</td>
+            <td class="center">
+                <input type="button" value="删除" onclick="myDel(this);">
+                <input type="button" value="修改" onclick="myEdit('row1');">
+            </td>
+        </tr>
+        <tr id="row2" class="goods">
+            <td class="center"><input name="product" type="checkbox" value="2"></td>
+            <td><img src="img/row2.png" alt="row2" class="little"> 联想拯救者r7000p 2021版</td>
+            <td class="center" name="sum">1</td>
+            <td class="center">6999</td>
+            <td class="center">
+                <input type="button" value="删除" onclick="myDel(this);">
+                <input type="button" value="修改" onclick="myEdit('row2');">
+            </td>
+        </tr>
+    </table>
+    <table border="0" cellspacing="0" cellpadding="0" id="shopping2">
+        <tr>
+            <td colspan="5" class="right" id="total_price">总价:&yen;0</td>
+
+        </tr>
+        <tr id="last" class="center">
+            <td id="add"><input type="button" value="增加商品&nbsp;" onclick="myAdd();"> </td>
+            <td id="confirm"><input type="button" value="结算" onclick="myAnotherConfirm();"></td>
+
+        </tr>
+    </table>
+
+</body>
+
+</html>

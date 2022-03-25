@@ -1,0 +1,35 @@
+body {
+    font-size: 13px;
+    line-height: 25px;
+}
+
+table {
+    border-top: 1px solid #333;
+    border-left: 1px solid #333;
+    width: 450px;
+}
+
+td {
+    border-right: 1px solid #333;
+    border-bottom: 1px solid #333;
+}
+
+.center {
+    text-align: center;
+}
+
+.right {
+    text-align: right;
+}
+
+.title {
+    text-align: center;
+    font-weight: bold;
+    background-color: #cccccc;
+}
+
+.little {
+    text-align: center;
+    width: 30px;
+    height: 20px;
+}

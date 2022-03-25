@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>购物页</title>
+    <style>
+        .big_pic {
+            width: 600px;
+            height: 400px;
+        }
+        .sma_pic {
+            width: 120px;
+            height: 80px;
+            float: left;
+        }
+        .msma_pic {
+            width: 60px;
+            height: 40px;
+            float: left;
+        }
+        div {
+            float:left;
+        }
+        .center {
+            text-align: center;
+        }
+        .pic {
+            width: 300px;
+            height: 40px;
+        }
+        .myTable {
+            border-spacing: 0px 23px;
+        }
+    </style>
+    <script>
+        function myChange1(){
+            var pic = document.getElementById("bigPic");
+            pic.innerHTML="<img src=\"img/row1.jpg\" alt='联想拯救者r9000p 2021版' class='big_pic' id='image'>"
+        }
+        function myChange2(){
+            var pic = document.getElementById("bigPic");
+            pic.innerHTML="<img src=\"img/row2.png\" alt='联想拯救者r9000p 2021版' class='big_pic' id='image'>"
+        }
+        function myChange3(){
+            var pic = document.getElementById("bigPic");
+            pic.innerHTML="<img src=\"img/row3.jpg\" alt='联想拯救者r9000p 2021版' class='big_pic' id='image'>"
+        }
+        function decrease(){
+            var sum = parseInt(document.getElementById("num").innerText);
+            if(sum == 1){
+                alert("商品最少为1件！");
+            }
+            else{
+                sum -= 1;
+                document.getElementById("num").innerText = sum;
+            }
+        }
+        function increase(){
+            var sum = parseInt(document.getElementById("num").innerText);
+            if(sum == 4){
+                alert("库存不足！");
+            }
+            else{
+                sum += 1;
+                document.getElementById("num").innerText = sum;
+            }
+        }
+        function choose(){
+            var radio_names = document.getElementsByName("conf");
+            for(var i=0;i<radio_names.length;i++){
+                if(radio_names[i].checked){
+                    return i;
+                }
+            }
+            return -1;
+        }
+        function price(){
+            var i = choose();
+            if(i==0){
+                document.getElementById("price").innerText="价格: 8999";
+            }else if(i==1){
+                document.getElementById("price").innerText="价格: 7999";
+            }else if(i==2){
+                document.getElementById("price").innerText="价格: 6999";
+            }else{
+                return;
+            }
+        }
+        var myPrice = setInterval("price()",250);
+    </script>
+</head>
+
+<body>
+    <div id="show_details">
+        <table class="gallary">
+            <tr>
+                <td colspan="3" id="bigPic"> <img src="img/row1.jpg" alt="联想拯救者r9000p 2021版" class="big_pic" id="image"></td>
+            </tr>
+            <tr>
+                <td><a href="#" onclick="myChange1();"><img src="img/row1.jpg" alt="联想拯救者r9000p 2021版"class="sma_pic"></a></td>
+                <td><a href="#" onclick="myChange2();"><img src="img/row2.png" alt="联想拯救者r7000p 2021版" class="sma_pic"></a></td>
+                <td><a href="#" onclick="myChange3();"><img src="img/row3.jpg" alt="联想拯救者y9000p 2021版" class="sma_pic"></a></td>
+            </tr>
+        </table>
+    </div>
+    <div id="buy_details">
+        <h2 class="center">联想拯救者r9000p 2021版</h2>
+        <table class="myTable">
+            <tr id="info">
+                <td id="price" colspan="2">价格: 7999&nbsp;&nbsp;&nbsp;</td>
+                <td>交易数: 500&nbsp;&nbsp;&nbsp;</td>
+                <td>评价数: 650</td>
+            </tr>
+            <tr id="delivery">
+                <td colspan="3">配送&nbsp;&nbsp;广东深圳&nbsp;至&nbsp;
+                    <select name="position" id="group" value="1">
+                        <option value="1">辽宁大连</option>
+                        <option value="2">广东广州</option>
+                    </select>
+                    &nbsp;&nbsp;&nbsp;包邮
+                </td>
+            </tr>
+            <tr id="conf">
+                <td>配置：</td>
+                <td colspan="2">
+                    <input type="radio" name="conf" value="高">高
+                    <input type="radio" name="conf" value="中">中
+                    <input type="radio" name="conf" value="低">低
+                </td>
+            </tr>
+            <tr id="color">
+                <td>颜色：</td>
+                <td><a href="#" onclick="myChange1();"><img src="img/row1.jpg" alt="联想拯救者r9000p 2021版"class="msma_pic"></a></td>
+                <td><a href="#" onclick="myChange2();"><img src="img/row2.png" alt="联想拯救者r7000p 2021版" class="msma_pic"></a></td>
+                <td><a href="#" onclick="myChange3();"><img src="img/row3.jpg" alt="联想拯救者y9000p 2021版" class="msma_pic"></a></td>
+            </tr>
+            <tr>
+                <td>数量：</td>
+                <td colspan="2">
+                    <input type="button" onclick="decrease();" value="-">
+                    <span id="num">1</span>
+                    <input type="button" onclick="increase();" value="+">
+                </td>
+                <td>库存：4件</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <a href="shopping_trollery.html"> <img src="img/buy.png" alt="buy"></a>
+                </td>
+                <td colspan="2">
+                    <a href="shopping_trollery.html"> <img src="img/add.png" alt="add"></a>
+                </td>
+            </tr>
+            <tr>
+                <td>服务</td>
+                <td>七天退货</td>
+            </tr>
+            <tr>
+                <td>支付</td>
+                <td>信用卡支付</td>
+                <td>支付宝支付</td>
+                <td>集分宝</td>
+            </tr>
+        </table>
+
+    </div>
+</body>
+
+</html>
